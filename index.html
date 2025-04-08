@@ -140,7 +140,26 @@
             background-color: var(--dark);
             transition: all 0.3s ease;
         }
+        .lang-switcher {
+            position: relative;
+            margin-left: 20px;
+        }
 
+        .lang-btn {
+            background: none;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .lang-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
         .hero {
             
             height: 100vh;
@@ -1013,13 +1032,16 @@
     <header id="header">
         <div class="container">
             <div class="nav-container">
-                <a href="#" class="logo">Saroj Thapa</a>
+                <a href="#" class="logo" data-i18n="logo">Saroj Thapa</a>
                 <ul class="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#competence">Competence</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                    <li><a href="#education" data-i18n="nav.education">Education</a></li>
+                    <li><a href="#competence" data-i18n="nav.competence">Competence</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+                    <li class="lang-switcher">
+                        <button class="lang-btn" id="languageToggle" data-i18n="language">NO</button>
+                    </li>
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -1030,46 +1052,49 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Saroj Thapa</h1>
-                <p class="hero-subtitle">Process Engineer  <br>Technical Consultant<br>  Sustainability Specialist</p>
+                <h1 class="hero-title" data-i18n="hero.title">Saroj Thapa</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Process Engineer<br>Technical Consultant<br>Sustainability Specialist</p>
                 <div class="hero-btns">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-outline">View Experience</a>
+                    <a href="#contact" class="btn btn-primary" data-i18n="hero.contactBtn">Get In Touch</a>
+                    <a href="#experience" class="btn btn-outline" data-i18n="hero.experienceBtn">View Experience</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="./images/hero.jpg" alt="Saroj Thapa">
+                <img src="./images/hero.jpg" alt="Saroj Thapa" data-i18n="hero.imageAlt">
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">Learn more about my professional journey and expertise</p>
+            <h2 class="section-title" data-i18n="about.title">About Me</h2>
+            <p class="section-subtitle" data-i18n="about.subtitle">Learn more about my professional journey and expertise</p>
             <div class="about-content">
                 <div class="about-image">
-                    <img src="./images/saroj.jpg" alt="Saroj Thapa">
+                    <img src="./images/saroj.jpg" alt="Saroj Thapa" data-i18n="about.imageAlt">
                 </div>
                 <div class="about-text">
-                    <h3>Process Engineer & Sustainability Specialist</h3>
-                    <p>I am a highly skilled process engineer with dual master's degrees in Sustainable Energy and Energy & Environmental Technology. My expertise lies in heat pumping processes, HVAC system design, and sustainability analysis.</p>
-                    <p>My professional journey spans across multiple roles, including technical consulting, market intelligence, and quality control engineering. I bring a unique perspective to every project with my blend of technical knowledge and sustainability focus.</p>
-                    <h3>Key Skills</h3>
+                    <h3 data-i18n="about.heading">Process Engineer & Sustainability Specialist</h3>
+                    <p data-i18n="about.text1">I am a highly skilled process engineer with dual master's degrees...</p>
+                    <p data-i18n="about.text2">My professional journey spans across multiple roles...</p>
+                    <h3 data-i18n="about.skillsTitle">Key Skills</h3>
                     <div class="skills-list">
-                        <span class="skill-tag">Process Engineering</span>
-                        <span class="skill-tag">HVAC Systems</span>
-                        <span class="skill-tag">Sustainability Analysis</span>
-                        <span class="skill-tag">Heat Pump Technology</span>
-                        <span class="skill-tag">Market Research</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">ESG Reporting</span>
-                        <span class="skill-tag">Energy Optimization</span>
-                        <span class="skill-tag">Technical Consulting</span>
-                        <span class="skill-tag">System Simulation</span>
+                        <span class="skill-tag" data-i18n="skills.1">Process Engineering</span>
+                        <span class="skill-tag" data-i18n="skills.2">HVAC Systems</span>
+        
+                        <span class="skill-tag" data-i18n="skills.3">Sustainability Analysis</span>
+                        <span class="skill-tag" data-i18n="skills.4">Heat Pump Technology</span>
+                        <span class="skill-tag" data-i18n="skills.5">Market Research</span>
+                        <span class="skill-tag" data-i18n="skills.6">Python</span>
+                        <span class="skill-tag" data-i18n="skills.7">ESG Reporting</span>
+                        <span class="skill-tag" data-i18n="skills.8">Energy Optimization</span>
+                        <span class="skill-tag" data-i18n="skills.9">Technical Consulting</span>
+                        <span class="skill-tag" data-i18n="skills.10">System Simulation</span>
                     </div>
                 </div>
             </div>
@@ -1078,18 +1103,18 @@
 
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <p class="section-subtitle">A timeline of my career journey and achievements</p>
+            <h2 class="section-title" data-i18n="experience.title">Professional Experience</h2>
+            <p class="section-subtitle" data-i18n="experience.subtitle">A timeline of my career journey and achievements</p>
             <div class="experience-timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">March 2023 - Present</div>
-                        <h3 class="timeline-title">Technical Consultant</h3>
-                        <div class="timeline-company">ATMOsphere (previously Shecco) | Brussels, Belgium</div>
-                        <p class="timeline-desc">Conducting market research projects in the HVAC sector, writing technical articles, working on SNAP approval for new products in the U.S., supporting ATMO-approved certification methodology and calculations, and preparing ESG reports.</p>
+                        <div class="timeline-date" data-i18n="experience.1.date">March 2023 - Present</div>
+                        <h3 class="timeline-title" data-i18n="experience.1.title">Technical Consultant</h3>
+                        <div class="timeline-company" data-i18n="experience.1.company">ATMOsphere (previously Shecco) | Brussels, Belgium</div>
+                        <p class="timeline-desc" data-i18n="experience.1.desc">Conducting market research projects in the HVAC sector...</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -1097,10 +1122,10 @@
                         <i class="fas fa-flask"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">June 2022 - August 2022</div>
-                        <h3 class="timeline-title">Summer Research Scientist</h3>
-                        <div class="timeline-company">SINTEF ENERGY AS | Trondheim, Norway</div>
-                        <p class="timeline-desc">Calculated energy demand for buildings and designed schematic layouts for heat pump installations in poultry farms. Worked with IDA-ICE software to calculate tentative design capacity of heat pumps to meet energy demands for heating.</p>
+                        <div class="timeline-date" data-i18n="experience.1.date">June 2022 - August 2022</div>
+                        <h3 class="timeline-title" data-i18n="experience.1.title">Summer Research Scientist</h3>
+                        <div class="timeline-company" data-i18n="experience.1.company">SINTEF ENERGY AS | Trondheim, Norway</div>
+                        <p class="timeline-desc" data-i18n="experience.1.desc">Calculated energy demand for buildings and designed schematic layouts for heat pump installations in poultry farms. Worked with IDA-ICE software to calculate tentative design capacity of heat pumps to meet energy demands for heating.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -1108,10 +1133,10 @@
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">September 2022 - September 2023</div>
-                        <h3 class="timeline-title">Teaching Assistant</h3>
-                        <div class="timeline-company">NTNU Trondheim | Norway</div>
-                        <p class="timeline-desc">Supported lead instructors with academic and laboratory sessions, graded coursework, and provided student feedback. Prepared teaching materials, ensured smooth running of lab experiments, and held office hours to address student queries.</p>
+                        <div class="timeline-date" data-i18n="experience.1.date">September 2022 - September 2023</div>
+                        <h3 class="timeline-title" data-i18n="experience.1.title">Teaching Assistant</h3>
+                        <div class="timeline-company" data-i18n="experience.1.company">NTNU Trondheim | Norway</div>
+                        <p class="timeline-desc" data-i18n="experience.1.desc">Supported lead instructors with academic and laboratory sessions, graded coursework, and provided student feedback. Prepared teaching materials, ensured smooth running of lab experiments, and held office hours to address student queries.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -1119,10 +1144,10 @@
                         <i class="fas fa-cogs"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">September 2020 - August 2021</div>
-                        <h3 class="timeline-title">Mechanical Supervisor</h3>
-                        <div class="timeline-company">Ministry of Physical Infrastructure and Transport Management | Pokhara, Nepal</div>
-                        <p class="timeline-desc">Evaluated vehicle designs for suitability on Nepalese terrain and ensured compliance with national emissions standards. Tested vehicle performance and oversaw emission testing processes, certifying vehicles that met legal CO2 emission thresholds and enforcing regulatory actions on non-compliant vehicles.</p>
+                        <div class="timeline-date" data-i18n="experience.1.date">September 2020 - August 2021</div>
+                        <h3 class="timeline-title" data-i18n="experience.1.title">Mechanical Supervisor</h3>
+                        <div class="timeline-company" data-i18n="experience.1.company">Ministry of Physical Infrastructure and Transport Management | Pokhara, Nepal</div>
+                        <p class="timeline-desc" data-i18n="experience.1.desc">Evaluated vehicle designs for suitability on Nepalese terrain and ensured compliance with national emissions standards. Tested vehicle performance and oversaw emission testing processes, certifying vehicles that met legal CO2 emission thresholds and enforcing regulatory actions on non-compliant vehicles.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -1130,10 +1155,10 @@
                         <i class="fas fa-check-square"></i>
                     </div>
                     <div class="timeline-content">
-                        <div class="timeline-date">September 2015 - November 2016</div>
-                        <h3 class="timeline-title">Quality Control Engineer</h3>
-                        <div class="timeline-company">Bthel Metal Industries Pvt. Ltd. | Tanahun, Nepal</div>
-                        <p class="timeline-desc">Specialized in ensuring high-performance standards of heating and ventilation systems across various working environments. Systematically evaluated HVAC installations for efficiency and reliability while maintaining strict adherence to industry quality standards and safety regulations.</p>
+                        <div class="timeline-date" data-i18n="experience.1.date">September 2015 - November 2016</div>
+                        <h3 class="timeline-title" data-i18n="experience.1.title">Quality Control Engineer</h3>
+                        <div class="timeline-company" data-i18n="experience.1.company">Bthel Metal Industries Pvt. Ltd. | Tanahun, Nepal</div>
+                        <p class="timeline-desc" data-i18n="experience.1.desc">Specialized in ensuring high-performance standards of heating and ventilation systems across various working environments. Systematically evaluated HVAC installations for efficiency and reliability while maintaining strict adherence to industry quality standards and safety regulations.</p>
                     </div>
                 </div>
             </div>
@@ -1142,170 +1167,194 @@
 
     <section id="education" class="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <p class="section-subtitle">My academic background and qualifications</p>
+            <h2 class="section-title" data-i18n="education.title">Education</h2>
+            <p class="section-subtitle" data-i18n="education.subtitle">My academic background and qualifications</p>
             <div class="education-cards">
                 <div class="education-card">
-                    <div class="education-date">August 2021 - October 2023</div>
-                    <h3 class="education-degree">Master of Science in Sustainable Energy</h3>
-                    <div class="education-school">NTNU Trondheim, Norway</div>
+                    <div class="education-date" data-i18n="education.1.date">August 2021 - October 2023</div>
+                    <h3 class="education-degree" data-i18n="education.1.degree">Master of Science in Sustainable Energy</h3>
+                    <div class="education-school" data-i18n="education.1.school">NTNU Trondheim, Norway</div>
                     <div class="education-desc">
-                        <p>Specialized in Heat Pumping Processes and Systems. Coursework included Gas Technology, Gas Cleaning and Emission Control, Energy Management in Buildings, System Simulation, Heat and Mass Transfer, Heat Pumping and Processes and Systems, Heat Pumps for Heating and Cooling in Buildings, Sustainable Energy Systems, European Cryogenics Courses, and Python Programming.</p>
-                        <p>Master Thesis: Development of Fossil Free Heating System and Thermal Storage Based on Heat Pump in Poultry Farm.</p>
+                        <p data-i18n="education.1.desc1">Specialized in Heat Pumping Processes and Systems. Coursework included Gas Technology, Gas Cleaning and Emission Control, Energy Management in Buildings, System Simulation, Heat and Mass Transfer, Heat Pumping and Processes and Systems, Heat Pumps for Heating and Cooling in Buildings, Sustainable Energy Systems, European Cryogenics Courses, and Python Programming.</p>
+                        <p data-i18n="education.1.desc2">Master Thesis: Development of Fossil Free Heating System and Thermal Storage Based on Heat Pump in Poultry Farm.</p>
                     </div>
-                    <span class="read-more" data-modal="education1">Read more</span>
+                    <span class="read-more" data-modal="education1" data-i18n="education.readMore">Read more</span>
                 </div>
                 <div class="education-card">
-                    <div class="education-date">August 2017 - June 2019</div>
-                    <h3 class="education-degree">Master of Science in Energy and Environmental Technology</h3>
-                    <div class="education-school">USN Porsgrunn, Norway</div>
+                    <div class="education-date" data-i18n="education.2.date">August 2017 - June 2019</div>
+                    <h3 class="education-degree" data-i18n="education.2.degree">Master of Science in Energy and Environmental Technology</h3>
+                    <div class="education-school" data-i18n="education.2.school">USN Porsgrunn, Norway</div>
                     <div class="education-desc">
-                        <p>Coursework included Modeling of Dynamic Systems, Scientific Computing, Thermodynamics, Transport Processes, Water Treatment and Environmental Biotechnology, Gas Purification and Energy Optimization, Combustion and Process Safety, Energy Technology, Project Management and Cost Engineering, Ignition Energy of Gases, and Process Control.</p>
-                        <p>Master's Thesis: Study of Ash Melting Behavior in the Biomass Gasification Reactor.</p>
+                        <p data-i18n="education.2.desc1">Coursework included Modeling of Dynamic Systems, Scientific Computing, Thermodynamics, Transport Processes, Water Treatment and Environmental Biotechnology, Gas Purification and Energy Optimization, Combustion and Process Safety, Energy Technology, Project Management and Cost Engineering, Ignition Energy of Gases, and Process Control.</p>
+                        <p data-i18n="education.2.desc2">Master's Thesis: Study of Ash Melting Behavior in the Biomass Gasification Reactor.</p>
                     </div>
-                    <span class="read-more" data-modal="education2">Read more</span>
+                    <span class="read-more" data-modal="education2" data-i18n="education.readMore">Read more</span>
                 </div>
                 <div class="education-card">
-                    <div class="education-date">June 2011 - August 2015</div>
-                    <h3 class="education-degree">Bachelor in Mechanical Engineering</h3>
-                    <div class="education-school">Bhagwant University, India</div>
+                    <div class="education-date" data-i18n="education.3.date">June 2011 - August 2015</div>
+                    <h3 class="education-degree" data-i18n="education.3.degree">Bachelor in Mechanical Engineering</h3>
+                    <div class="education-school" data-i18n="education.3.school">Bhagwant University, India</div>
                     <div class="education-desc">
-                        <p>Acquired a comprehensive foundation in core engineering disciplines, from Mechanics of Solids and Fluid Mechanics to Thermodynamics and Heat Transfer. Practical applications emphasized through extensive laboratory work, including Material Science and Thermal Engineering labs.</p>
-                        <p>Developed firm grasp of design principles through Computer-Aided Design and Machine Design courses, with deepened understanding of energy systems via subjects like Renewable Energy Resources and Power Plant Engineering.</p>
+                        <p data-i18n="education.3.desc1">Acquired a comprehensive foundation in core engineering disciplines, from Mechanics of Solids and Fluid Mechanics to Thermodynamics and Heat Transfer. Practical applications emphasized through extensive laboratory work, including Material Science and Thermal Engineering labs.</p>
+                        <p data-i18n="education.3.desc2">Developed firm grasp of design principles through Computer-Aided Design and Machine Design courses, with deepened understanding of energy systems via subjects like Renewable Energy Resources and Power Plant Engineering.</p>
                     </div>
-                    <span class="read-more" data-modal="education3">Read more</span>
+                    <span class="read-more" data-modal="education3" data-i18n="education.readMore">Read more</span>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <section id="competence" class="competence">
         <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">Key skills and expertise that define my professional profile</p>
+            <h2 class="section-title" data-i18n="competence.title">Core Competencies</h2>
+            <p class="section-subtitle" data-i18n="competence.subtitle">Key skills and expertise that define my professional profile</p>
             <div class="competence-cards">
                 <div class="competence-card">
                     <div class="competence-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
-                    <h3 class="competence-title">Process Engineering</h3>
-                    <p class="competence-desc">Expert in designing and optimizing industrial processes with a focus on energy efficiency and sustainability.</p>
+                    <h3 class="competence-title" data-i18n="competence.1.title">Process Engineering</h3>
+                    <p class="competence-desc" data-i18n="competence.1.desc">Expert in designing and optimizing industrial processes with a focus on energy efficiency and sustainability.</p>
                 </div>
                 <div class="competence-card">
                     <div class="competence-icon">
                         <i class="fas fa-wind"></i>
                     </div>
-                    <h3 class="competence-title">HVAC Engineering</h3>
-                    <p class="competence-desc">Specialized in designing and evaluating heating, ventilation, and air conditioning systems for optimal performance.</p>
+                    <h3 class="competence-title" data-i18n="competence.2.title">HVAC Engineering</h3>
+                    <p class="competence-desc" data-i18n="competence.2.desc">Specialized in designing and evaluating heating, ventilation, and air conditioning systems for optimal performance.</p>
                 </div>
                 <div class="competence-card">
                     <div class="competence-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h3 class="competence-title">Sustainability Analysis</h3>
-                    <p class="competence-desc">Skilled in conducting comprehensive sustainability assessments and developing ESG reporting frameworks.</p>
+                    <h3 class="competence-title" data-i18n="competence.3.title">Sustainability Analysis</h3>
+                    <p class="competence-desc" data-i18n="competence.3.desc">Skilled in conducting comprehensive sustainability assessments and developing ESG reporting frameworks.</p>
                 </div>
                 <div class="competence-card">
                     <div class="competence-icon">
                         <i class="fas fa-search-dollar"></i>
                     </div>
-                    <h3 class="competence-title">Market Intelligence</h3>
-                    <p class="competence-desc">Experienced in market research and analysis to identify business opportunities and develop strategic insights.</p>
+                    <h3 class="competence-title" data-i18n="competence.4.title">Market Intelligence</h3>
+                    <p class="competence-desc" data-i18n="competence.4.desc">Experienced in market research and analysis to identify business opportunities and develop strategic insights.</p>
                 </div>
                 <div class="competence-card">
                     <div class="competence-icon">
                         <i class="fas fa-drafting-compass"></i>
                     </div>
-                    <h3 class="competence-title">Mechanical Design</h3>
-                    <p class="competence-desc">Proficient in mechanical system design with expertise in AutoCAD and other design software.</p>
+                    <h3 class="competence-title" data-i18n="competence.5.title">Mechanical Design</h3>
+                    <p class="competence-desc" data-i18n="competence.5.desc">Proficient in mechanical system design with expertise in AutoCAD and other design software.</p>
                 </div>
                 <div class="competence-card">
                     <div class="competence-icon">
                         <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="competence-title">Technical Computing</h3>
-                    <p class="competence-desc">Skilled in Python, MATLAB, and simulation software for energy system modeling and analysis.</p>
+                    <h3 class="competence-title" data-i18n="competence.6.title">Technical Computing</h3>
+                    <p class="competence-desc" data-i18n="competence.6.desc">Skilled in Python, MATLAB, and simulation software for energy system modeling and analysis.</p>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <p class="section-subtitle">Let's connect and discuss how I can contribute to your projects</p>
+            <h2 class="section-title" data-i18n="contact.title">Contact Me</h2>
+            <p class="section-subtitle" data-i18n="contact.subtitle">Let's connect and discuss how I can contribute to your projects</p>
+            
             <div class="contact-info">
+                <!-- Email -->
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>
-                        <h3 class="contact-title">Email</h3>
+                        <h3 class="contact-title" data-i18n="contact.email.title">Email</h3>
                         <p class="contact-value"><a href="mailto:tsaroj456@gmail.com">tsaroj456@gmail.com</a></p>
                     </div>
                 </div>
+    
+                <!-- Phone -->
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
                     <div>
-                        <h3 class="contact-title">Phone</h3>
+                        <h3 class="contact-title" data-i18n="contact.phone.title">Phone</h3>
                         <p class="contact-value"><a href="tel:+4747734203">+47 47734203</a></p>
                     </div>
                 </div>
+    
+                <!-- Location -->
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div>
-                        <h3 class="contact-title">Location</h3>
-                        <p class="contact-value">Storgata 79, 0182 Oslo, Norway</p>
+                        <h3 class="contact-title" data-i18n="contact.location.title">Location</h3>
+                        <p class="contact-value" data-i18n="contact.location.value">Storgata 79, 0182 Oslo, Norway</p>
                     </div>
                 </div>
+    
+                <!-- LinkedIn -->
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fab fa-linkedin-in"></i>
                     </div>
                     <div>
-                        <h3 class="contact-title">LinkedIn</h3>
-                        <p class="contact-value"><a href="https://www.linkedin.com/in/saroj-thapa-255a03153/" target="_blank">Saroj Thapa</a></p>
+                        <h3 class="contact-title" data-i18n="contact.linkedin.title">LinkedIn</h3>
+                        <p class="contact-value"><a href="https://www.linkedin.com/in/saroj-thapa-255a03153/" target="_blank" data-i18n="contact.linkedin.value">Saroj Thapa</a></p>
                     </div>
                 </div>
             </div>
+    
             <div class="contact-form">
                 <form id="contactForm">
                     <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        <label for="name" class="form-label" data-i18n="contact.form.name">Name</label>
+                        <input type="text" id="name" class="form-control" 
+                               data-i18n="contact.form.namePlaceholder"
+                               placeholder="Your Name" 
+                               required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        <label for="email" class="form-label" data-i18n="contact.form.email">Email</label>
+                        <input type="email" id="email" class="form-control"
+                               data-i18n="contact.form.emailPlaceholder"
+                               placeholder="Your Email" 
+                               required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        <label for="subject" class="form-label" data-i18n="contact.form.subject">Subject</label>
+                        <input type="text" id="subject" class="form-control"
+                               data-i18n="contact.form.subjectPlaceholder"
+                               placeholder="Subject" 
+                               required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+                        <label for="message" class="form-label" data-i18n="contact.form.message">Message</label>
+                        <textarea id="message" class="form-control" 
+                                  data-i18n="contact.form.messagePlaceholder"
+                                  placeholder="Your Message" 
+                                  required></textarea>
                     </div>
-                    <button type="submit" class="form-btn">Send Message</button>
+                    
+                    <button type="submit" class="form-btn" data-i18n="contact.form.submit">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
-
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">Saroj Thapa</div>
+                <div class="footer-logo" data-i18n="footer.logo">Saroj Thapa</div>
                 <ul class="footer-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#competence">Competence</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                    <li><a href="#education" data-i18n="nav.education">Education</a></li>
+                    <li><a href="#competence" data-i18n="nav.competence">Competence</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
                 </ul>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/saroj-thapa-255a03153/" target="_blank" class="social-icon">
@@ -1320,94 +1369,96 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Saroj Thapa. All Rights Reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 Saroj Thapa. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
+    
     <div class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
 
     <!-- Education Modals -->
-    <div class="modal" id="educationModal1">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h3 class="modal-title">Master of Science in Sustainable Energy</h3>
-            <div class="modal-body">
-                <p><strong>Institution:</strong> NTNU Trondheim, Norway</p>
-                <p><strong>Duration:</strong> August 2021 - October 2023</p>
-                <p><strong>Specialization:</strong> Heat Pumping Processes and Systems</p>
-                <p><strong>Coursework:</strong></p>
-                <ul>
-                    <li>Gas Technology</li>
-                    <li>Gas Cleaning and Emission Control</li>
-                    <li>Energy Management in Buildings</li>
-                    <li>System Simulation</li>
-                    <li>Heat and Mass Transfer</li>
-                    <li>Heat Pumping and Processes and Systems</li>
-                    <li>Heat Pumps for Heating and Cooling in Buildings</li>
-                    <li>Sustainable Energy Systems</li>
-                    <li>European Cryogenics Courses</li>
-                    <li>Python Programming</li>
-                </ul>
-                <p><strong>Master Thesis:</strong> Development of Fossil Free Heating System and Thermal Storage Based on Heat Pump in Poultry Farm</p>
-                <p>This comprehensive program provided me with advanced knowledge in sustainable energy systems with a focus on heat pump technology. Through rigorous coursework and practical projects, I developed expertise in designing energy-efficient heating and cooling systems while considering environmental impacts. My master's thesis allowed me to apply theoretical knowledge to a real-world problem, designing a fossil-free heating system for agricultural applications.</p>
-            </div>
+<div class="modal" id="educationModal1">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h3 class="modal-title" data-i18n="education.1.degree">Master of Science in Sustainable Energy</h3>
+        <div class="modal-body">
+            <p><strong data-i18n="education.modal.institution">Institution:</strong> <span data-i18n="education.1.school">NTNU Trondheim, Norway</span></p>
+            <p><strong data-i18n="education.modal.duration">Duration:</strong> <span data-i18n="education.1.date">August 2021 - October 2023</span></p>
+            <p><strong data-i18n="education.modal.specialization">Specialization:</strong> <span data-i18n="education.1.specialization">Heat Pumping Processes and Systems</span></p>
+            <p><strong data-i18n="education.modal.coursework">Coursework:</strong></p>
+            <ul>
+                <li data-i18n="education.1.course1">Gas Technology</li>
+                <li data-i18n="education.1.course2">Gas Cleaning and Emission Control</li>
+                <li data-i18n="education.1.course3">Energy Management in Buildings</li>
+                <li data-i18n="education.1.course4">System Simulation</li>
+                <li data-i18n="education.1.course5">Heat and Mass Transfer</li>
+                <li data-i18n="education.1.course6">Heat Pumping and Processes and Systems</li>
+                <li data-i18n="education.1.course7">Heat Pumps for Heating and Cooling in Buildings</li>
+                <li data-i18n="education.1.course8">Sustainable Energy Systems</li>
+                <li data-i18n="education.1.course9">European Cryogenics Courses</li>
+                <li data-i18n="education.1.course10">Python Programming</li>
+            </ul>
+            <p><strong data-i18n="education.modal.thesis">Master Thesis:</strong> <span data-i18n="education.1.thesis">Development of Fossil Free Heating System and Thermal Storage Based on Heat Pump in Poultry Farm.</span></p>
+            <p data-i18n="education.1.modalDesc">This comprehensive program provided me with advanced knowledge in sustainable energy systems with a focus on heat pump technology. Through rigorous coursework and practical projects, I developed expertise in designing energy-efficient heating and cooling systems while considering environmental impacts. My master's thesis allowed me to apply theoretical knowledge to a real-world problem, designing a fossil-free heating system for agricultural applications. </p>
         </div>
     </div>
+</div>
 
-    <div class="modal" id="educationModal2">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h3 class="modal-title">Master of Science in Energy and Environmental Technology</h3>
-            <div class="modal-body">
-                <p><strong>Institution:</strong> USN Porsgrunn, Norway</p>
-                <p><strong>Duration:</strong> August 2017 - June 2019</p>
-                <p><strong>Coursework:</strong></p>
-                <ul>
-                    <li>Modeling of Dynamic Systems</li>
-                    <li>Scientific Computing</li>
-                    <li>Thermodynamics</li>
-                    <li>Transport Processes</li>
-                    <li>Water Treatment and Environmental Biotechnology</li>
-                    <li>Gas Purification and Energy Optimization</li>
-                    <li>Combustion and Process Safety</li>
-                    <li>Energy Technology</li>
-                    <li>Project Management and Cost Engineering</li>
-                    <li>Ignition Energy of Gases</li>
-                    <li>Process Control</li>
-                    <li>Handling of Particulate Solids</li>
+<div class="modal" id="educationModal2">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h3 class="modal-title" data-i18n="education.2.degree">Master of Science in Energy and Environmental Technology</h3>
+        <div class="modal-body">
+            <p><strong data-i18n="education.modal.institution">Institution:</strong> <span data-i18n="education.2.school">USN Porsgrunn, Norway</span></p>
+            <p><strong data-i18n="education.modal.duration">Duration:</strong> <span data-i18n="education.2.date">August 2017 - June 2019</span></p>
+            <p><strong data-i18n="education.modal.coursework">Coursework:</strong></p>
+            <ul>
+                <li data-i18n="education.2.course1">Modeling of Dynamic Systems</li>
+                <li data-i18n="education.2.course2">Scientific Computing</li>
+                <li data-i18n="education.2.course3">Thermodynamics</li>
+                    <li data-i18n="education.2.course4">Transport Processes</li>
+                    <li data-i18n="education.2.course5">Water Treatment and Environmental Biotechnology</li>
+                    <li data-i18n="education.2.course6">Gas Purification and Energy Optimization</li>
+                    <li data-i18n="education.2.course7">Combustion and Process Safety</li>
+                    <li data-i18n="education.2.course8">Energy Technology</li>
+                    <li data-i18n="education.2.course9">Project Management and Cost Engineering</li>
+                    <li data-i18n="education.2.course10">Ignition Energy of Gases</li>
+                    <li data-i18n="education.2.course11">Process Control</li>
+                    <li data-i18n="education.2.course12">Handling of Particulate Solids</li>
                 </ul>
-                <p><strong>Master's Thesis:</strong> Study of Ash Melting Behavior in the Biomass Gasification Reactor</p>
-                <p>This program equipped me with specialized knowledge in process engineering with an environmental focus. I gained expertise in energy system optimization, pollution control techniques, and sustainable process design. The interdisciplinary curriculum combined engineering principles with environmental considerations, preparing me to address complex challenges in energy production and utilization.</p>
-            </div>
+            </ul>
+            <p><strong data-i18n="education.modal.thesis">Master's Thesis:</strong> <span data-i18n="education.2.thesis">Study of Ash Melting Behavior in the Biomass Gasification Reactor</span></p>
+            <p data-i18n="education.2.modalDesc">This program equipped me with specialized knowledge in process engineering with an environmental focus. I gained expertise in energy system optimization, pollution control techniques, and sustainable process design. The interdisciplinary curriculum combined engineering principles with environmental considerations, preparing me to address complex challenges in energy production and utilization.</p>
         </div>
     </div>
+</div>
 
-    <div class="modal" id="educationModal3">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h3 class="modal-title">Bachelor in Mechanical Engineering</h3>
-            <div class="modal-body">
-                <p><strong>Institution:</strong> Bhagwant University, India</p>
-                <p><strong>Duration:</strong> June 2011 - August 2015</p>
-                <p><strong>Core Subjects:</strong></p>
-                <ul>
-                    <li>Mechanics of Solids</li>
-                    <li>Fluid Mechanics</li>
-                    <li>Thermodynamics</li>
-                    <li>Heat Transfer</li>
-                    <li>Material Science</li>
-                    <li>Manufacturing Processes</li>
-                    <li>Machine Design</li>
-                    <li>Computer-Aided Design</li>
-                    <li>Renewable Energy Resources</li>
-                    <li>Power Plant Engineering</li>
-                    <li>Mechatronics and Automation</li>
-                    <li>Operation Management</li>
+<div class="modal" id="educationModal3">
+    <div class="modal-content">
+        <span class="modal-close">&times;</span>
+        <h3 class="modal-title" data-i18n="education.3.degree">Bachelor in Mechanical Engineering</h3>
+        <div class="modal-body">
+            <p><strong data-i18n="education.modal.institution">Institution:</strong> <span data-i18n="education.3.school">Bhagwant University, India</span></p>
+            <p><strong data-i18n="education.modal.duration">Duration:</strong> <span data-i18n="education.3.date">June 2011 - August 2015</span></p>
+            <p><strong data-i18n="education.modal.specialization">Core Subjects:</strong></p>
+            <ul>
+                <li data-i18n="education.3.course1">Mechanics of Solids</li>
+                <li data-i18n="education.3.course2">Fluid Mechanics</li>
+      
+                    <li data-i18n="education.3.course3">Thermodynamics</li>
+                    <li data-i18n="education.3.course4">Heat Transfer</li>
+                    <li data-i18n="education.3.course5">Material Science</li>
+                    <li data-i18n="education.3.course6">Manufacturing Processes</li>
+                    <li data-i18n="education.3.course7">Machine Design</li>
+                    <li data-i18n="education.3.course8">Computer-Aided Design</li>
+                    <li data-i18n="education.3.course9">Renewable Energy Resources</li>
+                    <li data-i18n="education.3.course10">Power Plant Engineering</li>
+                    <li data-i18n="education.3.course11">Mechatronics and Automation</li>
+                    <li data-i18n="education.3.course12">Operation Management</li>
                 </ul>
-                <p>This undergraduate program provided me with a comprehensive foundation in mechanical engineering principles and practices. Through a balanced mix of theoretical courses and practical laboratory work, I developed strong analytical and problem-solving skills applicable to various engineering challenges. The program emphasized both traditional mechanical systems and emerging technologies, particularly in energy generation and utilization.</p>
+                <p data-i18n="education.3.modalDesc">This undergraduate program provided me with a comprehensive foundation in mechanical engineering principles and practices. Through a balanced mix of theoretical courses and practical laboratory work, I developed strong analytical and problem-solving skills applicable to various engineering challenges. The program emphasized both traditional mechanical systems and emerging technologies, particularly in energy generation and utilization.</p>
             </div>
         </div>
     </div>
@@ -1416,6 +1467,300 @@
         // Initialize GSAP
         gsap.registerPlugin(ScrollTrigger);
 
+         // Language configuration
+         let currentLang = 'en';
+        const translations = {
+    "en": {
+        "logo": "Saroj Thapa",
+        "nav.about": "About",
+        "nav.experience": "Experience",
+        "nav.education": "Education",
+        "nav.competence": "Competence",
+        "nav.contact": "Contact",
+        "language": "NO",
+        "hero.title": "Saroj Thapa",
+        "hero.subtitle": "Process Engineer<br>Technical Consultant<br>Sustainability Specialist",
+        "hero.contactBtn": "Get In Touch",
+        "hero.experienceBtn": "View Experience",
+        "about.title": "About Me",
+        "about.subtitle": "Learn more about my professional journey and expertise",
+        "about.heading": "Process Engineer & Sustainability Specialist",
+        "about.text1": "I am a highly skilled process engineer with dual master's degrees in Sustainable Energy and Energy & Environmental Technology. My expertise spans across HVAC systems, heat pump technology, and sustainable energy solutions.",
+        "about.text2": "With professional experience in technical consulting, energy optimization, and market research, I combine technical expertise with strategic insights to drive sustainable innovation in the energy sector.",
+        "about.skillsTitle": "Key Skills",
+        "skills.1": "Process Engineering",
+        "skills.2": "HVAC Systems",
+        "skills.3": "Sustainability Analysis",
+        "skills.4": "Heat Pump Technology",
+        "skills.5": "Market Research",
+        "skills.6": "Python",
+        "skills.7": "ESG Reporting",
+        "skills.8": "Energy Optimization",
+        "skills.9": "Technical Consulting",
+        "skills.10": "System Simulation",
+        "experience.title": "Professional Experience",
+        "experience.subtitle": "A timeline of my career journey and achievements",
+        "experience.1.date": "March 2023 - Present",
+        "experience.1.title": "Technical Consultant",
+        "experience.1.company": "ATMOsphere (previously Shecco) | Brussels, Belgium",
+        "experience.1.desc": "Conducting market research projects in the HVAC sector, analyzing industry trends and technological developments.",
+        "education.title": "Education",
+        
+    "education.subtitle": "My academic background and qualifications",
+    "education.readMore": "Read more",
+    "education.1.date": "August 2021 - October 2023",
+    "education.1.degree": "Master of Science in Sustainable Energy",
+    "education.1.school": "NTNU Trondheim, Norway",
+    "education.1.desc1": "Specialized in Heat Pumping Processes and Systems. Coursework included Gas Technology, Gas Cleaning and Emission Control, Energy Management in Buildings, System Simulation, Heat and Mass Transfer, Heat Pumping and Processes and Systems, Heat Pumps for Heating and Cooling in Buildings, Sustainable Energy Systems, European Cryogenics Courses, and Python Programming.",
+    "education.1.desc2": "Master Thesis: Development of Fossil Free Heating System and Thermal Storage Based on Heat Pump in Poultry Farm.",
+    "education.2.date": "August 2017 - June 2019",
+    "education.2.degree": "Master of Science in Energy and Environmental Technology",
+    "education.2.school": "USN Porsgrunn, Norway",
+    "education.2.desc1": "Coursework included Modeling of Dynamic Systems, Scientific Computing, Thermodynamics, Transport Processes, Water Treatment and Environmental Biotechnology, Gas Purification and Energy Optimization, Combustion and Process Safety, Energy Technology, Project Management and Cost Engineering, Ignition Energy of Gases, and Process Control.",
+    "education.2.desc2": "Master's Thesis: Study of Ash Melting Behavior in the Biomass Gasification Reactor.",
+    "education.3.date": "June 2011 - August 2015",
+    "education.3.degree": "Bachelor in Mechanical Engineering",
+    "education.3.school": "Bhagwant University, India",
+    "education.3.desc1": "Acquired a comprehensive foundation in core engineering disciplines, from Mechanics of Solids and Fluid Mechanics to Thermodynamics and Heat Transfer. Practical applications emphasized through extensive laboratory work, including Material Science and Thermal Engineering labs.",
+    "education.3.desc2": "Developed firm grasp of design principles through Computer-Aided Design and Machine Design courses, with deepened understanding of energy systems via subjects like Renewable Energy Resources and Power Plant Engineering.",
+       "competence.title": "Core Competencies",
+    "competence.subtitle": "Key skills and expertise that define my professional profile",
+    "competence.1.title": "Process Engineering",
+    "competence.1.desc": "Expert in designing and optimizing industrial processes with a focus on energy efficiency and sustainability.",
+    "competence.2.title": "HVAC Engineering",
+    "competence.2.desc": "Specialized in designing and evaluating heating, ventilation, and air conditioning systems for optimal performance.",
+    "competence.3.title": "Sustainability Analysis",
+    "competence.3.desc": "Skilled in conducting comprehensive sustainability assessments and developing ESG reporting frameworks.",
+    "competence.4.title": "Market Intelligence",
+    "competence.4.desc": "Experienced in market research and analysis to identify business opportunities and develop strategic insights.",
+    "competence.5.title": "Mechanical Design",
+    "competence.5.desc": "Proficient in mechanical system design with expertise in AutoCAD and other design software.",
+    "competence.6.title": "Technical Computing",
+    "competence.6.desc": "Skilled in Python, MATLAB, and simulation software for energy system modeling and analysis.",
+      
+"contact.title": "Contact Me",
+        "contact.subtitle": "Let's connect and discuss how I can contribute to your projects",
+        "contact.email.title": "Email",
+        "contact.phone.title": "Phone",
+        "contact.location.title": "Location",
+        "contact.location.value": "Storgata 79, 0182 Oslo, Norway",
+        "contact.linkedin.title": "LinkedIn",
+        "contact.form.name": "Name",
+        "contact.form.namePlaceholder": "Your Name",
+        "contact.form.email": "Email",
+        "contact.form.emailPlaceholder": "Your Email",
+        "contact.form.subject": "Subject",
+        "contact.form.subjectPlaceholder": "Subject",
+        "contact.form.message": "Message",
+        "contact.form.messagePlaceholder": "Your Message",
+        "contact.form.submit": "Send Message",
+
+
+        "education.modal.institution": "Institution:",
+        "education.modal.duration": "Duration:",
+        "education.modal.specialization": "Specialization:",
+        "education.modal.coursework": "Coursework:",
+        "education.modal.thesis": "Master Thesis:",
+        
+        "education.1": {
+            "degree": "Master of Science in Sustainable Energy",
+            "school": "NTNU Trondheim, Norway",
+            "date": "August 2021 - October 2023",
+            "specialization": "Heat Pumping Processes and Systems",
+            "course1": "Gas Technology",
+            "course2": "Gas Cleaning and Emission Control",
+            "course3": "Energy Management in Buildings",
+            "course4": "System Simulation",
+            "course5": "Heat and Mass Transfer",
+            "course6": "Heat Pumping and Processes and Systems",
+            "course7": "Heat Pumps for Heating and Cooling in Buildings",
+            "course8": "Sustainable Energy Systems",
+            "course9": "European Cryogenics Courses",
+            "course10": "Python Programming",
+            "thesis": "Development of Fossil Free Heating System and Thermal Storage Based on Heat Pump in Poultry Farm",
+            "modalDesc": "This comprehensive program provided me with advanced knowledge in sustainable energy systems with a focus on heat pump technology. Through rigorous coursework and practical projects, I developed expertise in designing energy-efficient heating and cooling systems while considering environmental impacts. My master's thesis allowed me to apply theoretical knowledge to a real-world problem, designing a fossil-free heating system for agricultural applications.",
+        },
+        "education.2": {
+            "degree": "Master of Science in Energy and Environmental Technology",
+            "school": "USN Porsgrunn, Norway",
+            "date": "August 2017 - June 2019",
+            "course1": "Modeling of Dynamic Systems",
+            "course2": "Scientific Computing",
+            "course3": "Thermodynamics",
+            "course4": "Transport Processes",
+            "course5": "Water Treatment and Environmental Biotechnology",
+            "course6": "Gas Purification and Energy Optimization",
+            "course7": "Combustion and Process Safety",
+            "course8": "Energy Technology",
+            "course9": "Project Management and Cost Engineering",
+            "course10": "Ignition Energy of Gases",
+            "course11": "Process Control",
+            "thesis": "Study of Ash Melting Behavior in the Biomass Gasification Reactor",
+            "modalDesc": "This program equipped me with specialized knowledge in process engineering with an environmental focus. I gained expertise in energy system optimization, pollution control techniques, and sustainable process design. The interdisciplinary curriculum combined engineering principles with environmental considerations, preparing me to address complex challenges in energy production and utilization."
+        },
+        "education.3": {
+            "degree": "Bachelor in Mechanical Engineering",
+            "school": "Bhagwant University, India",
+            "date": "June 2011 - August 2015",
+            "course1": "Mechanics of Solids",
+            "course2": "Fluid Mechanics",
+            "course3": "Thermodynamics",
+            "course4": "Heat Transfer",
+            "course5": "Material Science",
+            "course6": "Manufacturing Processes",
+            "course7": "Machine Design",
+            "course8": "Computer-Aided Design",
+            "course9": "Renewable Energy Resources",
+            "course10": "Power Plant Engineering",
+            "modalDesc": "This undergraduate program provided me with a comprehensive foundation in mechanical engineering principles and practices. Through a balanced mix of theoretical courses and practical laboratory work, I developed strong analytical and problem-solving skills applicable to various engineering challenges. The program emphasized both traditional mechanical systems and emerging technologies, particularly in energy generation and utilization."
+        },
+
+        "footer.copyright": "© 2025 Saroj Thapa. All Rights Reserved."
+    },
+    "no": {
+        "logo": "Saroj Thapa",
+        "nav.about": "Om meg",
+        "nav.experience": "Erfaring",
+        "nav.education": "Utdanning",
+        "nav.competence": "Kompetanse",
+        "nav.contact": "Kontakt",
+        "language": "EN",
+        "hero.title": "Saroj Thapa",
+        "hero.subtitle": "Prosessingeniør<br>Teknisk Rådgiver<br>Bærekraftspesialist",
+        "hero.contactBtn": "Ta kontakt",
+        "hero.experienceBtn": "Se erfaring",
+        "about.title": "Om meg",
+        "about.subtitle": "Lær mer om min profesjonelle reise og ekspertise",
+        "about.heading": "Prosessingeniør & Bærekraftspesialist",
+        "about.text1": "Jeg er en høyt kvalifisert prosessingeniør med to mastergrader innen bærekraftig energi og energi- og miljøteknologi. Min ekspertise spenner over VVS-systemer, varmepumpeteknologi og bærekraftige energiløsninger.",
+        "about.text2": "Med profesjonell erfaring innen teknisk rådgiving, energioptimalisering og markedskartlegging, kombinerer jeg teknisk ekspertise med strategiske innsikter for å drive bærekraftig innovasjon i energisektoren.",
+        "about.skillsTitle": "Nøkkelferdigheter",
+        "skills.1": "Prosesssteknikk",
+        "skills.2": "VVS-systemer",
+        "skills.3": "Bærekraftsanalyse",
+        "skills.4": "Varmepumpeteknologi",
+        "skills.5": "Markedsundersøkelse",
+        "skills.6": "Python",
+        "skills.7": "ESG-rapportering",
+        "skills.8": "Energioptimalisering",
+        "skills.9": "Teknisk rådgiving",
+        "skills.10": "Systemsimulering",
+        "experience.title": "Profesjonell erfaring",
+        "experience.subtitle": "Min karrierereise og prestasjoner",
+        "experience.1.date": "Mars 2023 - Nåværende",
+        "experience.1.title": "Teknisk Rådgiver",
+        "experience.1.company": "ATMOsphere (tidligere Shecco) | Brussel, Belgia",
+        "experience.1.desc": "Gjennomfører markedskartleggingsprosjekter i VVS-sektoren, analyserer bransjetrender og teknologiske utviklinger.",
+        "education.title": "Utdanning",
+    "education.subtitle": "Min akademiske bakgrunn og kvalifikasjoner",
+    "education.readMore": "Les mer",
+    "education.1.date": "August 2021 - Oktober 2023",
+    "education.1.degree": "Master i Bærekraftig Energi",
+    "education.1.school": "NTNU Trondheim, Norge",
+    "education.1.desc1": "Spesialisering innen varmepumpeprosesser og systemer. Kursarbeidet inkluderte gassteknologi, gassrensing og utslippskontroll, energistyring i bygninger, systemsimulering, varme- og masseoverføring, varmepumping og prosesser og systemer, varmepumper for oppvarming og kjøling i bygninger, bærekraftige energisystemer, europeiske kryogenetiske kurs, og Python-programmering.",
+    "education.1.desc2": "Masteroppgave: Utvikling av fossilfritt varmesystem og termisk lagring basert på varmepumpe i fjørfegård.",
+    "education.2.date": "August 2017 - Juni 2019",
+    "education.2.degree": "Master i Energi- og Miljøteknologi",
+    "education.2.school": "USN Porsgrunn, Norge",
+    "education.2.desc1": "Kursarbeidet inkluderte modellering av dynamiske systemer, vitenskapelig databehandling, termodynamikk, transportprosesser, vannbehandling og miljøbioteknologi, gassrensing og energioptimalisering, forbrenning og prosessikkerhet, energiteknologi, prosjektledelse og kostnadsberegning, tenningsenergi for gasser og prosesskontroll.",
+    "education.2.desc2": "Masteroppgave: Studie av askeoppførsel i biomassegassifiseringsreaktor.",
+    "education.3.date": "Juni 2011 - August 2015",
+    "education.3.degree": "Bachelor i Maskinteknisk Ingeniørfag",
+    "education.3.school": "Bhagwant University, India",
+    "education.3.desc1": "Tilegnet meg et omfattende grunnlag i sentrale ingeniørdisipliner, fra fasthetslære og strømningslære til termodynamikk og varmeoverføring. Praktiske anvendelser vektlagt gjennom omfattende laboratoriearbeid, inkludert materialvitenskap og termotekniske laboratorier.",
+    "education.3.desc2": "Utviklet solid forståelse av designprinsipper gjennom dataassistert design og maskinkonstruksjon, med fordypet forståelse av energisystemer via emner som fornybare energiressurser og kraftverksteknikk.",
+        "competence.title": "Kjernekompetanse",
+    "competence.subtitle": "Nøkkelferdigheter og ekspertise som definerer min profesjonelle profil",
+    "competence.1.title": "Prosesssteknikk",
+    "competence.1.desc": "Ekspert på design og optimalisering av industriprosesser med fokus på energieffektivitet og bærekraft.",
+    "competence.2.title": "VVS-teknologi",
+    "competence.2.desc": "Spesialisert innen design og evaluering av varme-, ventilasjons- og klimaanlegg for optimal ytelse.",
+    "competence.3.title": "Bærekraftsanalyse",
+    "competence.3.desc": "Dyktig i å gjennomføre omfattende bærekraftsvurderinger og utvikle ESG-rapporteringsrammeverk.",
+    "competence.4.title": "Markedsintelligens",
+    "competence.4.desc": "Erfaren i markedsundersøkelser og analyse for å identifisere forretningsmuligheter og utvikle strategiske innsikter.",
+    "competence.5.title": "Mekanisk Design",
+    "competence.5.desc": "Dyktig i mekanisk systemdesign med ekspertise i AutoCAD og annen designprogramvare.",
+    "competence.6.title": "Teknisk Databehandling",
+    "competence.6.desc": "Dyktig i Python, MATLAB og simuleringsprogramvare for energisystemmodellering og analyse.",
+        
+    "contact.title": "Kontakt meg",
+        "contact.subtitle": "La oss knytte kontakt og diskutere hvordan jeg kan bidra til dine prosjekter",
+        "contact.email.title": "E-post",
+        "contact.phone.title": "Telefon",
+        "contact.location.title": "Adresse",
+        "contact.location.value": "Storgata 79, 0182 Oslo, Norge",
+        "contact.linkedin.title": "LinkedIn",
+        "contact.form.name": "Navn",
+        "contact.form.namePlaceholder": "Ditt navn",
+        "contact.form.email": "E-post",
+        "contact.form.emailPlaceholder": "Din e-post",
+        "contact.form.subject": "Emne",
+        "contact.form.subjectPlaceholder": "Emne for meldingen",
+        "contact.form.message": "Melding",
+        "contact.form.messagePlaceholder": "Skriv din melding her",
+        "contact.form.submit": "Send melding",
+       
+        "education.modal.institution": "Institusjon:",
+        "education.modal.duration": "Varighet:",
+        "education.modal.specialization": "Spesialisering:",
+        "education.modal.coursework": "Kursarbeid:",
+        "education.modal.thesis": "Masteroppgave:",
+        
+        "education.1": {
+            "degree": "Master i Bærekraftig Energi",
+            "school": "NTNU Trondheim, Norge",
+            "date": "August 2021 - Oktober 2023",
+            "specialization": "Varmepumpeprosesser og systemer",
+            "course1": "Gassteknologi",
+            "course2": "Gassrensing og utslippskontroll",
+            "course3": "Energistyring i bygninger",
+            "course4": "Systemsimulering",
+            "course5": "Varme- og masseoverføring",
+            "course6": "Varmepumpeprosesser og systemer",
+            "course7": "Varmepumper for oppvarming og kjøling i bygninger",
+            "course8": "Bærekraftige energisystemer",
+            "course9": "Europeiske kryogenetiske kurs",
+            "course10": "Python-programmering",
+            "thesis": "Utvikling av fossilfritt varmesystem og termisk lagring basert på varmepumpe i fjørfegård",
+            "modalDesc": "Dette omfattende programmet ga meg avansert kunnskap om bærekraftige energisystemer med fokus på varmepumpeteknologi. Gjennom omfattende kursarbeid og praktiske prosjekter utviklet jeg ekspertise i å designe energieffektive oppvarmings- og kjølesystemer med hensyn til miljøpåvirkning. Masteroppgaven ga meg mulighet til å anvende teoretisk kunnskap på et praktisk problem, ved å designe et fossilfritt varmesystem for landbruksapplikasjoner.",
+        },
+            "footer.copyright": "© 2025 Saroj Thapa. Alle rettigheter forbeholdt."
+    }
+};
+        // Language toggle functionality
+        document.getElementById('languageToggle').addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'no' : 'en';
+            translatePage();
+            localStorage.setItem('portfolioLang', currentLang);
+        });
+
+        // Translation function
+        function translatePage() {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    if (element.tagName.toLowerCase() === 'input') {
+                        element.placeholder = translations[currentLang][key];
+                    } else {
+                        element.innerHTML = translations[currentLang][key];
+                    }
+                }
+            });
+
+            // Update button text
+            document.getElementById('languageToggle').textContent = currentLang === 'en' ? 'NO' : 'EN';
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = currentLang;
+        }
+
+        // Initialize language
+        const savedLang = localStorage.getItem('portfolioLang') || 'en';
+        currentLang = savedLang;
+        translatePage();
+
+ 
         // Navigation and mobile menu
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
