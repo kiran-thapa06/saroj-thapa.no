@@ -35,7 +35,8 @@
         }
 
         body {
-            background-color: var(--hero);
+            background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
@@ -165,7 +166,8 @@
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(to bottom, #0A2733, #061820);
+           
+
             position: relative;
             overflow: hidden;
         }
@@ -277,218 +279,621 @@
 
         .section-subtitle {
             font-size: 18px;
-            color: var(--text);
+            color: var(--light);
             text-align: center;
             margin-bottom: 40px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
+/* About Section */
+.about {
+  padding: 8rem 0;
+ 
+  overflow: hidden;
+}
 
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            margin-top: 40px;
-        }
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s forwards;
+}
 
-        .about-image {
-            flex: 1;
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        .about-image img {
-            width: 100%;
-            transition: all 0.5s ease;
-        }
+.about-image {
+  position: relative;
+  border-radius: 30% 70% 67% 33% / 30% 30% 70% 70%;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgb(255, 255, 255);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-        .about-image:hover img {
-            transform: scale(1.05);
-        }
+.about-image:hover {
+  border-radius: 50%;
+  transform: rotate(5deg) scale(1.03);
+}
 
-        .about-text {
-            flex: 1;
-        }
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(20%);
+  transition: filter 0.4s ease;
+}
 
-        .about-text h3 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
+.about-image:hover img {
+  filter: grayscale(0%);
+}
 
-        .about-text p {
-            margin-bottom: 20px;
-        }
+.about-text h3 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
 
-        .skill-tag {
-            background-color: rgba(14, 165, 233, 0.1);
-            color: var(--primary);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
 
-        .skill-tag:hover {
-            background-color: var(--primary);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeInRight 0.6s ease-out forwards;
+}
 
-        .experience-timeline {
-            position: relative;
-            margin-top: 60px;
-        }
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-        .timeline-item {
-            display: flex;
-            margin-bottom: 50px;
-            position: relative;
-        }
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
 
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
+.skill-tag {
+  background: rgba(46, 204, 113, 0.1);
+  color: #91baa2;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 2px solid rgba(46, 204, 113, 0.2);
+  cursor: default;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: skillAppear 0.4s ease-out forwards;
+}
 
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: 18px;
-            top: 0;
-            height: 100%;
-            width: 2px;
-            background-color: var(--border);
-        }
+@keyframes skillAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        .timeline-item:last-child:before {
-            height: 0;
-        }
+.skill-tag:hover {
+  background: #2ecc71;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(46, 204, 113, 0.2);
+}
 
-        .timeline-dot {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 16px;
-            margin-right: 20px;
-            position: relative;
-            z-index: 1;
-        }
 
-        .timeline-content {
-            flex: 1;
-            background-color: var(--white);
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
+.about-text p:nth-child(1) { animation-delay: 0.4s; }
+.about-text p:nth-child(2) { animation-delay: 0.6s; }
+.skills-list .skill-tag { 
+  animation-delay: calc(0.6s + (0.1s * var(--i)));
+}
 
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
+/* Responsive Design */
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .about-image {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
 
-        .timeline-date {
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
+@media (max-width: 768px) {
+  .about {
+    padding: 6rem 0;
+  }
+  
+  .about-text h3 {
+    font-size: 1.75rem;
+  }
+  
+  .skill-tag {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
 
-        .timeline-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
+@media (max-width: 480px) {
+  .about-image {
+    max-width: 300px;
+  }
+  
+  .about-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+}
 
-        .timeline-company {
-            font-size: 16px;
-            color: var(--text);
-            margin-bottom: 15px;
-        }
+/* Base styles */
+.experience {
+  padding: 4rem 0;
+  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
 
-        .timeline-desc {
-            font-size: 15px;
-            color: var(--text);
-        }
+}
 
-        .education-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-        .education-card {
-            background-color: var(--white);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
 
-        .education-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+  color: white;
+}
 
-        .education-date {
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
+/* Timeline specific styles */
+.experience-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-        .education-degree {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
+/* Center line */
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: #2c3e50;
+  transform: translateX(-50%);
+}
 
-        .education-school {
-            font-size: 16px;
-            color: var(--text);
-            margin-bottom: 15px;
-        }
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 100%;
+}
 
-        .education-desc {
-            font-size: 15px;
-            color: var(--text);
-            margin-bottom: 15px;
-            height: 140px;
-            overflow: hidden;
-            position: relative;
-        }
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #3498db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
 
-        .education-desc:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: linear-gradient(transparent, var(--white));
-        }
+.timeline-dot i {
+  color: white;
+  font-size: 1.2rem;
+}
 
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Alternate left and right for timeline items */
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-left: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-right: auto;
+  left: 0;
+}
+
+/* Content styling */
+.timeline-date {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: #3498db;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.timeline-title {
+  margin: 0 0 0.5rem;
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.timeline-company {
+  font-style: italic;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.timeline-desc {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 992px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  
+  .experience-timeline::before {
+    left: 40px;
+  }
+  
+  .timeline-dot {
+    left: 40px;
+    transform: translateX(-50%);
+  }
+  
+  .timeline-content {
+    width: calc(100% - 80px);
+    margin-left: 80px !important;
+    margin-right: 0 !important;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .experience {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    width: 95%;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .timeline-title {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-desc {
+    font-size: 0.95rem;
+  }
+  
+  .timeline-company {
+    font-size: 0.9rem;
+  }
+  
+  .timeline-dot {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .timeline-dot i {
+    font-size: 1rem;
+  }
+}
+      
+.education {
+  padding: 5rem 0;
+
+  color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.education::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3.5rem;
+  color: #a0c8e0;
+  font-weight: 300;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards Container */
+.education-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* Education Card Styling */
+.education-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2), 
+              0 5px 10px rgba(0, 0, 0, 0.1),
+              inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  opacity: 0.8;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+ 
+              box-shadow: 0 25px 50px -12px rgb(95, 192, 88);
+}
+
+.education-date {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(79, 172, 254, 0.2);
+  color: #4facfe;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.education-degree {
+  margin: 0 0 0.6rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.education-school {
+  font-style: italic;
+  color: #a0c8e0;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.education-desc {
+  color: #d0d0d0;
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.education-desc p {
+  margin-bottom: 1rem;
+}
+
+.education-desc p:last-child {
+  margin-bottom: 0;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-weight: 500;
+}
+
+.read-more:hover {
+  background: rgba(79, 172, 254, 0.3);
+  border-color: rgba(79, 172, 254, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1200px) {
+  .education-cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .education-degree {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .education {
+    padding: 4rem 0;
+  }
+  
+  .education-cards {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .education {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    width: 92%;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .education-card {
+    padding: 1.5rem;
+  }
+  
+  .education-degree {
+    font-size: 1.3rem;
+  }
+  
+  .education-school {
+    font-size: 1rem;
+  }
+  
+  .education-desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for the cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.education-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.education-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.education-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.education-card:hover .education-degree {
+  color: #4facfe;
+  transition: color 0.3s ease;
+}
         .read-more {
             color: var(--secondary);
             font-weight: 500;
@@ -808,8 +1213,7 @@
             line-height: 1.7;
         }
 
-      /* Keep your original media queries but update them as follows */
-
+     
 @media (max-width: 992px) {
     .about-content {
         flex-direction: column;
@@ -833,7 +1237,7 @@
     }
 }
 
-/* Add iPad Pro and iPad Air specific media queries */
+
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .hero {
         flex-direction: column;
@@ -980,7 +1384,6 @@
     }
 }
 
-/* Add small mobile devices media query */
 @media (max-width: 480px) {
     .hero-title {
         font-size: 28px;
@@ -1026,6 +1429,337 @@
         .pulse {
             animation: pulse 2s infinite;
         }
+
+
+.publications, .languages {
+  padding: 5rem 0;
+  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+  color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.publications::before, .languages::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 3.5rem;
+  color: #a0c8e0;
+  font-weight: 300;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.publications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.publication-card {
+  display: flex;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.1),
+              0 0 15px 2px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.publication-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.publication-icon i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.publication-content {
+  flex-grow: 1;
+}
+
+.publication-title {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.publication-details {
+  color: #a0c8e0;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.publication-desc {
+  color: #d0d0d0;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.publication-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(79, 172, 254, 0.2);
+  color: #4facfe;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.publication-link:hover {
+  background: rgba(79, 172, 254, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.publication-link svg {
+  transition: transform 0.3s ease;
+}
+
+.publication-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Languages Section Styles */
+.languages-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.language-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.8rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.language-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 
+              inset 0 1px 1px rgba(255, 255, 255, 0.1),
+              0 0 15px 2px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.language-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.language-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.language-level {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.native {
+  background: rgba(76, 175, 80, 0.2);
+  color: #6deb70;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.advanced {
+  background: rgba(33, 150, 243, 0.2);
+  color: #4facfe;
+  border: 1px solid rgba(33, 150, 243, 0.3);
+}
+
+.intermediate {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffd54f;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.language-progress {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  position: relative;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Animation for progress bars */
+@keyframes progressAnimation {
+  0% {
+    width: 0;
+  }
+}
+
+.language-card:nth-child(1) .progress-bar {
+  animation: progressAnimation 1.5s ease-out forwards;
+}
+
+.language-card:nth-child(2) .progress-bar {
+  animation: progressAnimation 1.5s ease-out 0.2s forwards;
+}
+
+.language-card:nth-child(3) .progress-bar {
+  animation: progressAnimation 1.5s ease-out 0.4s forwards;
+}
+
+.language-card:nth-child(4) .progress-bar {
+  animation: progressAnimation 1.5s ease-out 0.6s forwards;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 992px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .publication-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .publications, .languages {
+    padding: 4rem 0;
+  }
+  
+  .publication-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .publication-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .languages-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .publications, .languages {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    width: 92%;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .publication-card, .language-card {
+    padding: 1.5rem;
+  }
+  
+  .publication-title {
+    font-size: 1.1rem;
+  }
+  
+  .language-name {
+    font-size: 1.1rem;
+  }
+}
     </style>
 </head>
 <body>
@@ -1080,7 +1814,7 @@
                 </div>
                 <div class="about-text">
                     <h3 data-i18n="about.heading">Process Engineer & Sustainability Specialist</h3>
-                    <p data-i18n="about.text1">I am a highly skilled process engineer with dual master's degrees...</p>
+                    <p data-i18n="about.text1">I am a skilled process engineer with dual master's degrees...</p>
                     <p data-i18n="about.text2">My professional journey spans across multiple roles...</p>
                     <h3 data-i18n="about.skillsTitle">Key Skills</h3>
                     <div class="skills-list">
@@ -1253,7 +1987,107 @@
             </div>
         </div>
     </section>
-    
+   <!-- Publications Section -->
+<section id="publications" class="publications">
+    <div class="container">
+        <h2 class="section-title" data-i18n="publications.title">Publications</h2>
+        <p class="section-subtitle" data-i18n="publications.subtitle">Academic research and contributions</p>
+        
+        <div class="publications-container">
+            <div class="publication-card">
+                <div class="publication-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="publication-content">
+                    <h3 class="publication-title" data-i18n="publications.1.title">Development of Fossil Free Heating System and Thermal Storage Based on Heat Pump in Poultry Farm</h3>
+                    <p class="publication-details" data-i18n="publications.1.details">NTNU Open Repository, 2023</p>
+                    <p class="publication-desc" data-i18n="publications.1.desc">Master thesis research on sustainable heating solutions for agricultural applications.</p>
+                    <a href="https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3105114/no.ntnu%3Ainspera%3A142433533%3A98323952.pdf?sequence=1&isAllowed=y" class="publication-link" target="_blank">
+                        <span data-i18n="publications.readLink">Read Publication</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="publication-card">
+                <div class="publication-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="publication-content">
+                    <h3 class="publication-title" data-i18n="publications.2.title">Ash Melting Behavior in Biomass Gasification Reactor</h3>
+                    <p class="publication-details" data-i18n="publications.2.details">Linköping University Electronic Press, 2019</p>
+                    <p class="publication-desc" data-i18n="publications.2.desc">Research on ash behavior and its impact on biomass gasification systems.</p>
+                    <a href="https://ep.liu.se/ecp/170/026/ecp19170026.pdf" class="publication-link" target="_blank">
+                        <span data-i18n="publications.readLink">Read Publication</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Languages Section -->
+<section id="languages" class="languages">
+    <div class="container">
+        <h2 class="section-title" data-i18n="languages.title">Languages</h2>
+        <p class="section-subtitle" data-i18n="languages.subtitle">My communication skills across different languages</p>
+        
+        <div class="languages-container">
+            <div class="language-card">
+                <div class="language-info">
+                    <span class="language-name" data-i18n="languages.nepali.name">Nepali</span>
+                    <span class="language-level native" data-i18n="languages.nepali.level">Native</span>
+                </div>
+                <div class="language-progress">
+                    <div class="progress-bar" style="width: 100%;"></div>
+                </div>
+            </div>
+            
+            <div class="language-card">
+                <div class="language-info">
+                    <span class="language-name" data-i18n="languages.english.name">English</span>
+                    <span class="language-level advanced" data-i18n="languages.english.level">B2/C1</span>
+                </div>
+                <div class="language-progress">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+            </div>
+            
+            <div class="language-card">
+                <div class="language-info">
+                    <span class="language-name" data-i18n="languages.hindi.name">Hindi/Urdu</span>
+                    <span class="language-level advanced" data-i18n="languages.hindi.level">B2</span>
+                </div>
+                <div class="language-progress">
+                    <div class="progress-bar" style="width: 85%;"></div>
+                </div>
+            </div>
+            
+            <div class="language-card">
+                <div class="language-info">
+                    <span class="language-name" data-i18n="languages.norwegian.name">Norwegian</span>
+                    <span class="language-level intermediate" data-i18n="languages.norwegian.level">B1</span>
+                </div>
+                <div class="language-progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ 
+  
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title" data-i18n="contact.title">Contact Me</h2>
@@ -1616,7 +2450,33 @@
         "footer.logo": "Saroj Thapa",
         "footer.copyright": "© 2025 Saroj Thapa. All Rights Reserved.",
         "hero.imageAlt": "Saroj Thapa",
-        "about.imageAlt": "Saroj Thapa"
+        "about.imageAlt": "Saroj Thapa",
+        
+    "publications.title": "Publications",
+    "publications.subtitle": "Academic research and contributions",
+    "publications.1.title": "Development of Fossil Free Heating System and Thermal Storage Based on Heat Pump in Poultry Farm",
+    "publications.1.details": "NTNU Open Repository, 2023",
+    "publications.1.desc": "Master thesis research on sustainable heating solutions for agricultural applications.",
+    "publications.2.title": "Ash Melting Behavior in Biomass Gasification Reactor",
+    "publications.2.details": "Linköping University Electronic Press, 2019",
+    "publications.2.desc": "Research on ash behavior and its impact on biomass gasification systems.",
+    "publications.readLink": "Read Publication",
+    
+    "languages.title": "Languages",
+    "languages.subtitle": "My communication skills across different languages",
+    "languages.nepali.name": "Nepali",
+    "languages.nepali.level": "Native", 
+    "languages.english.name": "English",
+    "languages.english.level": "B2/C1",
+    "languages.hindi.name": "Hindi/Urdu", 
+    "languages.hindi.level": "B2",
+    "languages.norwegian.name": "Norwegian",
+    "languages.norwegian.level": "B1",
+    
+    "footer.logo": "Saroj Thapa",
+    "footer.copyright": "© 2025 Saroj Thapa. All Rights Reserved.",
+    "hero.imageAlt": "Saroj Thapa",
+    "about.imageAlt": "Saroj Thapa"
     },
     "no": {
         "logo": "Saroj Thapa",
@@ -1765,7 +2625,32 @@
         "footer.logo": "Saroj Thapa",
         "footer.copyright": "© 2025 Saroj Thapa. Alle rettigheter forbeholdt.",
         "hero.imageAlt": "Saroj Thapa",
-        "about.imageAlt": "Saroj Thapa"
+        "about.imageAlt": "Saroj Thapa",
+        
+    "publications.title": "Publikasjoner",
+    "publications.subtitle": "Akademisk forskning og bidrag",
+    "publications.1.title": "Utvikling av fossilfritt varmesystem og termisk lagring basert på varmepumpe i fjørfegård",
+    "publications.1.details": "NTNU Åpent Arkiv, 2023",
+    "publications.1.desc": "Masteroppgave om bærekraftige oppvarmingsløsninger for landbruksapplikasjoner.",
+    "publications.2.title": "Askesmeltingsatferd i biomassegassifiseringsreaktor",
+    "publications.2.details": "Linköping University Electronic Press, 2019",
+    "publications.2.desc": "Forskning på askeatferd og dens innvirkning på biomassegassifiseringssystemer.",
+    "publications.readLink": "Les Publikasjon",
+    
+    "languages.title": "Språk",
+    "languages.subtitle": "Mine kommunikasjonsferdigheter på forskjellige språk",
+    "languages.nepali.name": "Nepali",
+    "languages.nepali.level": "Morsmål",
+    "languages.english.name": "Engelsk",
+    "languages.english.level": "B2/C1",
+    "languages.hindi.name": "Hindi/Urdu",
+    "languages.hindi.level": "B2",
+    "languages.norwegian.name": "Norsk",
+    "languages.norwegian.level": "B1",
+    
+    "logo": "Saroj Thapa",
+    "nav.about": "Om meg"
+  
     }
 };
         
