@@ -141,7 +141,7 @@
                                 width: 25px;
                                 height: 3px;
                                 margin: 5px 0;
-                                background-color: var(--dark);
+                                background-color: var(--white);
                                 transition: all 0.3s ease;
                             }
                             .lang-switcher {
