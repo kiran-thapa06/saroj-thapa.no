@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saroj Thapa - Process Engineer Portfolio</title>
+    <link rel="icon" href="data:;base64,=">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
@@ -19,7 +21,263 @@
     <link href="https://fonts.cdnfonts.com/css/rogan" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/lovely-pretty" rel="stylesheet">
      
-     </style>           
+<style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+           background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+            min-height: 100vh;
+            padding: 20px 0;
+             
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .services {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .service-card:nth-child(2) .service-icon {
+            animation-delay: -1s;
+        }
+
+        .service-card:nth-child(3) .service-icon {
+            animation-delay: -2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .service-card h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+
+
+        .card-container {
+    perspective: 1000px;
+    width: 350px;
+    height: 450px;
+    margin: 50px auto;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+    cursor: pointer;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.card-back {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-back .card-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-back .card-info {
+    gap: 15px;
+    justify-content: flex-start;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+}
+
+.card-back .info-item {
+    display: block;
+    padding: 8px 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.info-label {
+    font-weight: 600;
+    min-width: 120px;
+    margin-right: 15px;
+    opacity: 0.9;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card.flipped:hover {
+    transform: rotateY(180deg) translateY(-5px);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .card-container {
+        width: 300px;
+        height: 400px;
+        margin: 30px auto;
+    }
+    
+    .card-face {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .card-back .card-title {
+        font-size: 20px;
+    }
+    
+    .info-item {
+        font-size: 14px;
+    }
+    
+    .card-back .info-item {
+        font-size: 13px;
+    }
+}
+        @media (max-width: 768px) {
+            .card-container {
+                width: 350px;
+                height: 450px;
+            }
+            
+            
+            
+            .card:hover {
+                transform: none;
+            }
+            
+            .card.flipped {
+                transform: rotateY(180deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                padding: 25px;
+            }
+        }
+    </style>  
+              
 </head>
 <body>
     <header id="header">
@@ -296,6 +554,75 @@
     </div>
 </section>
 
+
+<section class="services">
+    <div class="container">
+        <h2 class="section-title" data-i18n="services.title">Professional MEP Design Solutions</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🌡️</span>
+                <h3 data-i18n="services.hvac.title">HVAC Design</h3>
+                <p data-i18n="services.hvac.desc">
+                    Comprehensive design of heating, ventilation, and air conditioning systems to ensure optimal temperature control and superior air quality within your building. Our solutions prioritize energy efficiency and occupant comfort while meeting all environmental standards.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🚰</span>
+                <h3 data-i18n="services.plumbing.title">Plumbing Design</h3>
+                <p data-i18n="services.plumbing.desc">
+                    Expert design of water supply, drainage, and waste removal systems. We create efficient, reliable plumbing infrastructure that meets all building codes and environmental standards while ensuring long-term durability and optimal performance.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <span class="service-icon">🔥</span>
+                <h3 data-i18n="services.fire.title">Fire Protection Design</h3>
+                <p data-i18n="services.fire.desc">
+                    Advanced design of fire alarm systems, sprinkler systems, and comprehensive fire suppression measures. We implement cutting-edge safety solutions to protect lives and property with reliable emergency response systems that exceed industry standards.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <div class="card-container">
+        <div class="card" onclick="toggleCard(this)">
+            <div class="card-face card-front">
+                <h1 class="card-title" data-i18n="card.title">Mechanical Engineer</h1>
+                <div class="card-info">
+                    <div class="info-item">
+                        <div class="info-label" data-i18n="info.company">Company:</div>
+                        <div>kmcgroupco.com</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label" data-i18n="info.startDate">Start Date:</div>
+                        <div data-i18n="info.date">1st June</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label" data-i18n="info.position">Position:</div>
+                        <div data-i18n="info.role">Mechanical Engineer</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-face card-back">
+                <h2 class="card-title" data-i18n="tasks.title">Tasks to Do</h2>
+                <div class="card-info">
+                    <div class="info-item" data-i18n="task.design">• Design and develop mechanical systems</div>
+                    <div class="info-item" data-i18n="task.analysis">• Perform engineering analysis and calculations</div>
+                    <div class="info-item" data-i18n="task.cad">• Create CAD models and technical drawings</div>
+                    <div class="info-item" data-i18n="task.testing">• Conduct testing and validation</div>
+                    <div class="info-item" data-i18n="task.optimization">• Optimize manufacturing processes</div>
+                    <div class="info-item" data-i18n="task.quality">• Implement quality control procedures</div>
+                    <div class="info-item" data-i18n="task.maintenance">• Develop maintenance schedules</div>
+                    <div class="info-item" data-i18n="task.support">• Provide technical support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <!-- Languages Section -->
 <section id="languages" class="languages">
     <div class="container">
@@ -385,7 +712,7 @@
                 </div>
                 <div>
                     <h3 class="contact-title" data-i18n="contact.location.title">Location</h3>
-                    <p class="contact-value" data-i18n="contact.location.value">Storgata 79, 0182 Oslo, Norway</p>
+                    <p class="contact-value" data-i18n="contact.location.value">Oslo, Norway</p>
                 </div>
             </div>
 
@@ -405,13 +732,13 @@
         <div class="contact-form">
             <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Web3Forms access key (required) -->
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="access_key" value="15b86baa-8447-4784-ab48-d43681de2be8">
                 
                 <div class="form-group">
                     <label for="name" class="form-label" data-i18n="contact.form.name">Name</label>
                     <input type="text" id="name" name="name" class="form-control" 
                            data-i18n="contact.form.namePlaceholder"
-                           placeholder="Your Name" 
+                           placeholder="Saroj Thapa" 
                            required>
                 </div>
                 
@@ -419,7 +746,7 @@
                     <label for="email" class="form-label" data-i18n="contact.form.email">Email</label>
                     <input type="email" id="email" name="email" class="form-control"
                            data-i18n="contact.form.emailPlaceholder"
-                           placeholder="Your Email" 
+                           placeholder="tsaroj456@gmail.com" 
                            required>
                 </div>
                 
@@ -449,22 +776,7 @@
                 <div id="form-status" class="form-status"></div>
             </form>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
+ </div>
 </section>
 
     <footer>
@@ -585,6 +897,23 @@
     const submitButton = form.querySelector('button[type="submit"]');
     const formStatus = document.getElementById('form-status') || document.createElement('div');
     
+    
+    const addHiddenField = (name, value) => {
+       
+        let field = form.querySelector(`input[name="${name}"]`);
+        if (!field) {
+            field = document.createElement('input');
+            field.type = 'hidden';
+            field.name = name;
+            form.appendChild(field);
+        }
+        field.value = value;
+    };
+    
+    
+    addHiddenField('from_name', 'Message from Website Contact Form');
+    addHiddenField('subject', '');
+    
     if (!document.getElementById('form-status')) {
         formStatus.id = 'form-status';
         formStatus.className = 'form-status';
@@ -594,14 +923,26 @@
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
-           const originalText = submitButton.innerText;
+        const originalText = submitButton.innerText;
         submitButton.innerText = 'Sending...';
         submitButton.disabled = true;
         
-       
         const formData = new FormData(form);
         
-      
+        
+        let messageSubject = '';
+        const subjectField = form.querySelector('input[name="subject"], input[name="message_subject"]');
+        if (subjectField) {
+            messageSubject = subjectField.value;
+            
+            
+            if (subjectField.name === 'message_subject') {
+                
+                const originalMessage = formData.get('message');
+                formData.set('message', `Subject: ${messageSubject}\n\n${originalMessage}`);
+            }
+        }
+        
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             body: formData
@@ -717,7 +1058,7 @@
         "contact.email.title": "Email",
         "contact.phone.title": "Phone",
         "contact.location.title": "Location",
-        "contact.location.value": "Storgata 79, 0182 Oslo, Norway",
+        "contact.location.value": "Oslo, Norway",
         "contact.linkedin.title": "LinkedIn",
         "contact.linkedin.value": "Saroj Thapa",
         "contact.form.name": "Name",
@@ -788,6 +1129,31 @@
     "publications.2.details": "Linköping University Electronic Press, 2019",
     "publications.2.desc": "Research on ash behavior and its impact on biomass gasification systems.",
     "publications.readLink": "Read Publication",
+
+    "services.title": "Professional MEP Design Solutions",
+"services.hvac.title": "HVAC Design",
+"services.hvac.desc": "Comprehensive design of heating, ventilation, and air conditioning systems to ensure optimal temperature control and superior air quality within your building. Our solutions prioritize energy efficiency and occupant comfort while meeting all environmental standards.",
+"services.plumbing.title": "Plumbing Design",
+"services.plumbing.desc": "Expert design of water supply, drainage, and waste removal systems. We create efficient, reliable plumbing infrastructure that meets all building codes and environmental standards while ensuring long-term durability and optimal performance.",
+"services.fire.title": "Fire Protection Design",
+"services.fire.desc": "Advanced design of fire alarm systems, sprinkler systems, and comprehensive fire suppression measures. We implement cutting-edge safety solutions to protect lives and property with reliable emergency response systems that exceed industry standards.",
+
+ "page.title": "Mechanical Engineer Tasks - KMC Group",
+                "card.title": "Mechanical Engineer",
+                "info.company": "Company:",
+                "info.startDate": "Start Date:",
+                "info.date": "1st June",
+                "info.position": "Position:",
+                "info.role": "Mechanical Engineer",
+                "tasks.title": "Tasks to Do",
+                "task.design": "• Design and develop mechanical systems",
+                "task.analysis": "• Perform engineering analysis and calculations",
+                "task.cad": "• Create CAD models and technical drawings",
+                "task.testing": "• Conduct testing and validation",
+                "task.optimization": "• Optimize manufacturing processes",
+                "task.quality": "• Implement quality control procedures",
+                "task.maintenance": "• Develop maintenance schedules",
+                "task.support": "• Provide technical support",
     
     "languages.title": "Languages",
     "languages.subtitle": "My communication skills across different languages",
@@ -820,7 +1186,7 @@
         "about.title": "Om meg",
         "about.subtitle": "Lær mer om min profesjonelle reise og ekspertise",
         "about.heading": "Prosessingeniør & Bærekraftspesialist",
-        "about.text1": "Jeg er en høyt kvalifisert prosessingeniør med to mastergrader innen bærekraftig energi og energi- og miljøteknologi. Min ekspertise spenner over VVS-systemer, varmepumpeteknologi og bærekraftige energiløsninger.",
+        "about.text1": "Jeg er en dyktig prosessingeniør med doble mastergrader i Sustainable Energy og Energy & Environmental Technology. Min ekspertise spenner over HVAC-systemer, varmepumpeteknologi og bærekraftige energiløsninger.",
         "about.text2": "Med profesjonell erfaring innen teknisk rådgiving, energioptimalisering og markedskartlegging, kombinerer jeg teknisk ekspertise med strategiske innsikter for å drive bærekraftig innovasjon i energisektoren.",
         "about.skillsTitle": "Nøkkelferdigheter",
         "skills.1": "Prosesssteknikk",
@@ -892,7 +1258,7 @@
         "contact.email.title": "E-post",
         "contact.phone.title": "Telefon",
         "contact.location.title": "Adresse",
-        "contact.location.value": "Storgata 79, 0182 Oslo, Norge",
+        "contact.location.value": "Oslo, Norge",
         "contact.linkedin.title": "LinkedIn",
         "contact.linkedin.value": "Saroj Thapa",
         "contact.form.name": "Navn",
@@ -963,7 +1329,30 @@
     "publications.2.details": "Linköping University Electronic Press, 2019",
     "publications.2.desc": "Forskning på askeatferd og dens innvirkning på biomassegassifiseringssystemer.",
     "publications.readLink": "Les Publikasjon",
+    "services.title": "Profesjonelle MEP Designløsninger",
+"services.hvac.title": "HVAC Design",
+"services.hvac.desc": "Omfattende design av varme-, ventilasjon- og klimaanlegg for å sikre optimal temperaturkontroll og overlegen luftkvalitet i bygningen din. Våre løsninger prioriterer energieffektivitet og beboerkomfort samtidig som de oppfyller alle miljøstandarder.",
+"services.plumbing.title": "Rørleggerdesign",
+"services.plumbing.desc": "Ekspertdesign av vannforsyning, drenering og avfallsfjerningssystemer. Vi skaper effektiv, pålitelig rørleggerinfrastruktur som oppfyller alle byggeforskrifter og miljøstandarder samtidig som vi sikrer langsiktig holdbarhet og optimal ytelse.",
+"services.fire.title": "Brannbeskyttelsesdesign",
+"services.fire.desc": "Avansert design av brannalarmsystemer, sprinklersystemer og omfattende brannbekjempingstiltak. Vi implementerer banebrytende sikkerhetsløsninger for å beskytte liv og eiendom med pålitelige nødberedskapssystemer som overgår industristandardene.",
     
+"page.title": "Maskiningeniør Oppgaver - KMC Group",
+                "card.title": "Maskiningeniør",
+                "info.company": "Selskap:",
+                "info.startDate": "Startdato:",
+                "info.date": "1. juni",
+                "info.position": "Stilling:",
+                "info.role": "Maskiningeniør",
+                "tasks.title": "Oppgaver å gjøre",
+                "task.design": "• Design og utvikle mekaniske systemer",
+                "task.analysis": "• Utføre ingeniøranalyse og beregninger",
+                "task.cad": "• Lage CAD-modeller og tekniske tegninger",
+                "task.testing": "• Gjennomføre testing og validering",
+                "task.optimization": "• Optimalisere produksjonsprosesser",
+                "task.quality": "• Implementere kvalitetskontrollprosedyrer",
+                "task.maintenance": "• Utvikle vedlikeholdsplaner",
+                "task.support": "• Gi teknisk support",
     "languages.title": "Språk",
     "languages.subtitle": "Mine kommunikasjonsferdigheter på forskjellige språk",
     "languages.nepali.name": "Nepali",
@@ -1184,12 +1573,7 @@
         });
 
         
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert("Thank you for your message! This is a demo form, so no actual message was sent.");
-            contactForm.reset();
-        });
-
+        
         
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1207,7 +1591,9 @@
                 });
             });
         });
-        
+        function toggleCard(card) {
+    card.classList.toggle('flipped');
+}
 
     </script>
 </body>
